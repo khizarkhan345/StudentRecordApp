@@ -6,10 +6,13 @@ const RecordForm = (props) => {
     const [lastName, setLastName] =   useState(props.record ? props.record.lastName:'');
     const [email, setEmail] = useState(props.record ? props.record.email:'');
     const [phoneNo, setPhoneNo] = useState(props.record ? props.record.phoneNo:'');
+    const [error, setError] = useState('');
     
     const onSubmit = (e) => {
         e.preventDefault();
-        
+        if(!email.match(/[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/)){
+          setError("Incorrect email format!")
+        }
         props.onSubmit({
             firstName: firstName,
             lastName: lastName,
@@ -57,6 +60,9 @@ const RecordForm = (props) => {
           <input type="submit" value="Submit" />
          </div>   
           </form>
+          {
+            error && <p className='error'>{error}</p>
+          }
         </div>
     )
 }
