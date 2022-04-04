@@ -1,0 +1,33 @@
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 200px 200px 300px 200px 60px 60px;
+    grid-auto-rows: auto;
+    padding: 0 15px 0 170px;
+}
+
+.grid-item {
+    background-color: #f2f2f2;
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    font-size: 15px;
+    text-align: center;
+    align-items: center;
+}
+
+.editBtn {
+    border: none;
+    background-color: #04AA6D;
+    color: white;
+    width: 60px;
+    height: 23px;
+    cursor: pointer;
+}
+
+.dltBtn {
+    border: none;
+    background-color: rgba(252, 5, 17, 0.9);
+    color: white;
+    width: 58px;
+    height: 23px;
+    cursor: pointer;
+}

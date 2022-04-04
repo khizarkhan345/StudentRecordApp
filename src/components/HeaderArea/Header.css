@@ -1,0 +1,21 @@
+.headerArea {
+    display: flex;
+    align-items: center;
+    height: 70px;
+    list-style-type: none;
+    margin: 0;
+    padding-left: 120px;
+    background-color: #04AA6D;
+    color: white;
+
+}
+.header {
+    font-size: 25px;
+    margin-left: 20px;
+    color: white;
+}
+.Navlink {
+    text-decoration: none;
+    color: white;
+}
+
