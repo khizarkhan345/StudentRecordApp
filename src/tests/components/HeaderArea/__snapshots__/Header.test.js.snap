@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render Header correctly 1`] = `
+<div>
+  <ul
+    className="headerArea"
+  >
+    <li
+      className="header"
+    >
+      <NavLink
+        className="Navlink"
+        to="/"
+      >
+        Dashboard
+      </NavLink>
+    </li>
+    <li
+      className="header"
+    >
+      <NavLink
+        className="Navlink"
+        to="/addRecord"
+      >
+        Add Student
+      </NavLink>
+    </li>
+  </ul>
+</div>
+`;

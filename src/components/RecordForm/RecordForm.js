@@ -12,13 +12,21 @@ const RecordForm = (props) => {
         e.preventDefault();
         if(!email.match(/[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/)){
           setError("Incorrect email format!")
-        }
-        props.onSubmit({
+        }else{
+
+          props.onSubmit({
             firstName: firstName,
             lastName: lastName,
             email: email,
            phoneNo: phoneNo
         })
+
+        }
+
+        setTimeout(() => {
+          setError("");
+        }, 3000)
+      
     }
 
     return(

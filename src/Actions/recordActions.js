@@ -51,7 +51,7 @@ export const editRecord = (id, updates) => {
 }
 
 export const removeRecord = (id) => {
-    console.log(id)
+   console.log(id)
    return (dispatch) => {
     dispatch({type: 'REMOVE_RECORD', id})
    }

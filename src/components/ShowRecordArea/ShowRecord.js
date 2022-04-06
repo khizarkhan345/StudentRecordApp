@@ -9,7 +9,7 @@ const url = 'https://jsonplaceholder.typicode.com/users/';
 const ShowRecord = (props) => {
   const pageLimit = 5;
   const dataLimit = 15;
-  const [pages] = useState(Math.round(props.sortData.length / dataLimit));
+  const [pages] = useState(Math.round(props.record.length / dataLimit));
   const [currentPage, setCurrentPage] = useState(1);
   const [error, setError] = useState('');
   
@@ -29,7 +29,7 @@ const ShowRecord = (props) => {
  const getPaginatedData = () => {
   const startIndex = currentPage * dataLimit - dataLimit;
   const endIndex = startIndex + dataLimit;
-  return props.sortData.slice(startIndex, endIndex);
+  return props.record.slice(startIndex, endIndex);
  };
 
  const getPaginationGroup = () => {
@@ -113,7 +113,12 @@ const ShowRecord = (props) => {
     {
       error && <p>{error}</p>
     }
-    
+    {
+      console.log('unsorted record', props.record)
+    }
+    {
+      console.log('sorted record', props.sortData)
+    }
     </div>
     )
 }
@@ -121,7 +126,8 @@ const ShowRecord = (props) => {
 const mapStateToProps = (state) => {
   console.log(state)
   return {
-   sortData: SortData(state.record)
+    record: state.record,
+    sortData: SortData(state.record)
   }
 }
 
